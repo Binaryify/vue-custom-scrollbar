@@ -22,15 +22,19 @@ Vue.JS 的简约但完美的自定义滚动条组件(使用了 [utatti/perfect-s
 <demo-1></demo-1>
 </ClientOnly>
 
-## Install
+## 安装
+
+安装和使用 `vue-custom-scrollbar` 的最好的方式是使用 `npm` 或者 `yarn`. 它被注册为 [vue-custom-scrollbarr](https://www.npmjs.com/package/vue-custom-scrollbar).
 
 #### npm
-
-安装和使用 vue-custom-scrollbar 的最好的方式是使用 `npm` 或者 `yarn`. 它被注册为 [vue-custom-scrollbarr](https://www.npmjs.com/package/vue-custom-scrollbar).
 
 ```
 $ npm install vue-custom-scrollbar
 ```
+
+### 或者
+
+#### yarn
 
 ```
 $ yarn add vue-custom-scrollbar
@@ -225,14 +229,14 @@ vue-custom-scrollbar 触发的自定义事件.
 
 请理解，解决问题可能需要一段时间。上传 PR 将是解决问题的最快方法。
 
-## IE Support
+## IE 支持
 
 该插件支持现代浏览器，包括 Edge 和 IE11，但在 IE11 中可能存在一些问题，主要是因为 IE 渲染错误涉及滚动属性上的同步更新。在
 [Caveats](https://github.com/utatti/perfect-scrollbar/wiki/Caveats) 也提到了这个问题 。
 
 不支持 IE <11，并且不接受用于修复 IE <= 10 中的问题的补丁。如果想支持旧的 IE，请 fork 此项目并在本地进行修改。
 
-## More
+## 更多
 
 请参考 [perfect-scrollbar](https://github.com/utatti/perfect-scrollbar)
 

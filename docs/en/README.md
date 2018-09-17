@@ -24,14 +24,18 @@ As you know, Chrome support custom scrollbar, but Firefox or other browsers don'
 
 ## Install
 
-#### npm
-
-The best way to install and use vue-custom-scrollbar is with `npm` or `yarn`. It's registered
+The best way to install and use `vue-custom-scrollbar` is with `npm` or `yarn`. It's registered
 as [vue-custom-scrollbarr](https://www.npmjs.com/package/vue-custom-scrollbar).
+
+#### npm
 
 ```
 $ npm install vue-custom-scrollbar
 ```
+
+### Or
+
+#### yarn
 
 ```
 $ yarn add vue-custom-scrollbar
