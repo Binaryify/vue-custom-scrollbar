@@ -8,7 +8,6 @@
 
 <script>
 import vueCustomScrollbar from '../../../src/vue-scrollbar.vue'
-console.log(vueCustomScrollbar)
 export default {
   components: {
     vueCustomScrollbar
