@@ -68,6 +68,13 @@ export default {
         this.__uninit()
       }
     },
+    settings: {
+      deep: true,
+      handler() {
+        this.__uninit()
+        this.__init()
+      }
+    },
     $route() {
       this.update()
     }
