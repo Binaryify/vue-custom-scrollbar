@@ -7,7 +7,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
-  "dependencies": {
+  "peerDependencies": {
     "perfect-scrollbar": "^1.4.0",
     "vue": "^2.5.17"
   },
