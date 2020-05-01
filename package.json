@@ -1,6 +1,6 @@
 {
   "name": "vue-custom-scrollbar",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vueScrollbar src/vue-scrollbar.vue",
@@ -8,14 +8,14 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "perfect-scrollbar": "^1.4.0",
-    "vue": "^2.5.17"
+    "perfect-scrollbar": "^1.5.0",
+    "vue": "^2.6.11"
   },
   "main": "dist/vueScrollbar.umd.min.js",
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.3",
-    "@vue/cli-service": "^3.0.3",
-    "vue-template-compiler": "^2.5.17",
-    "vuepress": "^0.14.3"
+    "@vue/cli-plugin-babel": "^4.3.1",
+    "@vue/cli-service": "^4.3.1",
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.4.1"
   }
 }

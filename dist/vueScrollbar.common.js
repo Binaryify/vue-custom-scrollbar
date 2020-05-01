@@ -82,127 +82,150 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "a667");
+/******/ 	return __webpack_require__(__webpack_require__.s = "fb15");
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "24fb":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+// eslint-disable-next-line func-names
+module.exports = function (useSourceMap) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item, useSourceMap);
+
+      if (item[2]) {
+        return "@media ".concat(item[2], " {").concat(content, "}");
+      }
+
+      return content;
+    }).join('');
+  }; // import a list of modules into the list
+  // eslint-disable-next-line func-names
+
+
+  list.i = function (modules, mediaQuery, dedupe) {
+    if (typeof modules === 'string') {
+      // eslint-disable-next-line no-param-reassign
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    if (dedupe) {
+      for (var i = 0; i < this.length; i++) {
+        // eslint-disable-next-line prefer-destructuring
+        var id = this[i][0];
+
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+
+    for (var _i = 0; _i < modules.length; _i++) {
+      var item = [].concat(modules[_i]);
+
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
+
+      if (mediaQuery) {
+        if (!item[2]) {
+          item[2] = mediaQuery;
+        } else {
+          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
+        }
+      }
+
+      list.push(item);
+    }
+  };
+
+  return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
+
+  var cssMapping = item[3];
+
+  if (!cssMapping) {
+    return content;
+  }
+
+  if (useSourceMap && typeof btoa === 'function') {
+    var sourceMapping = toComment(cssMapping);
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return "/*# sourceURL=".concat(cssMapping.sourceRoot || '').concat(source, " */");
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+  }
+
+  return [content].join('\n');
+} // Adapted from convert-source-map (MIT)
+
+
+function toComment(sourceMap) {
+  // eslint-disable-next-line no-undef
+  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+  var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+  return "/*# ".concat(data, " */");
+}
+
+/***/ }),
 
 /***/ "3ae1":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_vue_style_loader_4_1_2_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_1_0_1_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_15_7_0_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_2_0_1_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_15_7_0_vue_loader_lib_index_js_vue_loader_options_vue_scrollbar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("f5fc");
-/* harmony import */ var _node_modules_vue_style_loader_4_1_2_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_1_0_1_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_15_7_0_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_2_0_1_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_15_7_0_vue_loader_lib_index_js_vue_loader_options_vue_scrollbar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_4_1_2_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_1_0_1_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_15_7_0_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_2_0_1_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_15_7_0_vue_loader_lib_index_js_vue_loader_options_vue_scrollbar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_scrollbar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("82d5");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_scrollbar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_scrollbar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_4_1_2_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_1_0_1_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_15_7_0_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_2_0_1_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_15_7_0_vue_loader_lib_index_js_vue_loader_options_vue_scrollbar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vue_scrollbar_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ "4ccc":
+/***/ "3e10":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("690e")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".ps{overflow:hidden!important;overflow-anchor:none;-ms-overflow-style:none;touch-action:auto;-ms-touch-action:auto}.ps__rail-x{height:15px;bottom:0}.ps__rail-x,.ps__rail-y{display:none;opacity:0;transition:background-color .2s linear,opacity .2s linear;-webkit-transition:background-color .2s linear,opacity .2s linear;position:absolute}.ps__rail-y{width:15px;right:0}.ps--active-x>.ps__rail-x,.ps--active-y>.ps__rail-y{display:block;background-color:transparent}.ps--focus>.ps__rail-x,.ps--focus>.ps__rail-y,.ps--scrolling-x>.ps__rail-x,.ps--scrolling-y>.ps__rail-y,.ps:hover>.ps__rail-x,.ps:hover>.ps__rail-y{opacity:.6}.ps .ps__rail-x.ps--clicking,.ps .ps__rail-x:focus,.ps .ps__rail-x:hover,.ps .ps__rail-y.ps--clicking,.ps .ps__rail-y:focus,.ps .ps__rail-y:hover{background-color:#eee;opacity:.9}.ps__thumb-x{transition:background-color .2s linear,height .2s ease-in-out;-webkit-transition:background-color .2s linear,height .2s ease-in-out;height:6px;bottom:2px}.ps__thumb-x,.ps__thumb-y{background-color:#aaa;border-radius:6px;position:absolute}.ps__thumb-y{transition:background-color .2s linear,width .2s ease-in-out;-webkit-transition:background-color .2s linear,width .2s ease-in-out;width:6px;right:2px}.ps__rail-x.ps--clicking .ps__thumb-x,.ps__rail-x:focus>.ps__thumb-x,.ps__rail-x:hover>.ps__thumb-x{background-color:#999;height:11px}.ps__rail-y.ps--clicking .ps__thumb-y,.ps__rail-y:focus>.ps__thumb-y,.ps__rail-y:hover>.ps__thumb-y{background-color:#999;width:11px}@supports (-ms-overflow-style:none){.ps{overflow:auto!important}}@media (-ms-high-contrast:none),screen and (-ms-high-contrast:active){.ps{overflow:auto!important}}", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "690e":
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+var ___CSS_LOADER_AT_RULE_IMPORT_0___ = __webpack_require__("f851");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+exports.i(___CSS_LOADER_AT_RULE_IMPORT_0___);
+// Module
+exports.push([module.i, ".ps-container{position:relative}", ""]);
+// Exports
+module.exports = exports;
 
 
 /***/ }),
 
-/***/ "85cb":
+/***/ "499e":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/_vue-style-loader@4.1.2@vue-style-loader/lib/listToStyles.js
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "default", function() { return /* binding */ addStylesClient; });
+
+// CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/listToStyles.js
 /**
  * Translates the list format produced by css-loader into something
  * easier to manipulate.
@@ -231,8 +254,7 @@ function listToStyles (parentId, list) {
   return styles
 }
 
-// CONCATENATED MODULE: ./node_modules/_vue-style-loader@4.1.2@vue-style-loader/lib/addStylesClient.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return addStylesClient; });
+// CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/addStylesClient.js
 /*
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
@@ -459,57 +481,158 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ "9d3c":
+/***/ "82d5":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("690e")(false);
-// imports
-exports.i(__webpack_require__("4ccc"), "");
+// style-loader: Adds some css to the DOM by adding a <style> tag
 
-// module
-exports.push([module.i, ".ps-container{position:relative}", ""]);
+// load the styles
+var content = __webpack_require__("3e10");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("226990f3", content, true, {"sourceMap":false,"shadowMode":false});
 
-// exports
+/***/ }),
+
+/***/ "8875":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// addapted from the document.currentScript polyfill by Adam Miller
+// MIT license
+// source: https://github.com/amiller-gh/currentScript-polyfill
+
+// added support for Firefox https://bugzilla.mozilla.org/show_bug.cgi?id=1620505
+
+(function (root, factory) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {}
+}(typeof self !== 'undefined' ? self : this, function () {
+  function getCurrentScript () {
+    if (document.currentScript) {
+      return document.currentScript
+    }
+  
+    // IE 8-10 support script readyState
+    // IE 11+ & Firefox support stack trace
+    try {
+      throw new Error();
+    }
+    catch (err) {
+      // Find the second match for the "at" string to get file src url from stack.
+      var ieStackRegExp = /.*at [^(]*\((.*):(.+):(.+)\)$/ig,
+        ffStackRegExp = /@([^@]*):(\d+):(\d+)\s*$/ig,
+        stackDetails = ieStackRegExp.exec(err.stack) || ffStackRegExp.exec(err.stack),
+        scriptLocation = (stackDetails && stackDetails[1]) || false,
+        line = (stackDetails && stackDetails[2]) || false,
+        currentLocation = document.location.href.replace(document.location.hash, ''),
+        pageSource,
+        inlineScriptSourceRegExp,
+        inlineScriptSource,
+        scripts = document.getElementsByTagName('script'); // Live NodeList collection
+  
+      if (scriptLocation === currentLocation) {
+        pageSource = document.documentElement.outerHTML;
+        inlineScriptSourceRegExp = new RegExp('(?:[^\\n]+?\\n){0,' + (line - 2) + '}[^<]*<script>([\\d\\D]*?)<\\/script>[\\d\\D]*', 'i');
+        inlineScriptSource = pageSource.replace(inlineScriptSourceRegExp, '$1').trim();
+      }
+  
+      for (var i = 0; i < scripts.length; i++) {
+        // If ready state is interactive, return the script tag
+        if (scripts[i].readyState === 'interactive') {
+          return scripts[i];
+        }
+  
+        // If src matches, return the script tag
+        if (scripts[i].src === scriptLocation) {
+          return scripts[i];
+        }
+  
+        // If inline source matches, return the script tag
+        if (
+          scriptLocation === currentLocation &&
+          scripts[i].innerHTML &&
+          scripts[i].innerHTML.trim() === inlineScriptSource
+        ) {
+          return scripts[i];
+        }
+      }
+  
+      // If no match, return null
+      return null;
+    }
+  };
+
+  return getCurrentScript
+}));
 
 
 /***/ }),
 
-/***/ "a667":
+/***/ "f851":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".ps{overflow:hidden!important;overflow-anchor:none;-ms-overflow-style:none;touch-action:auto;-ms-touch-action:auto}.ps__rail-x{height:15px;bottom:0}.ps__rail-x,.ps__rail-y{display:none;opacity:0;transition:background-color .2s linear,opacity .2s linear;-webkit-transition:background-color .2s linear,opacity .2s linear;position:absolute}.ps__rail-y{width:15px;right:0}.ps--active-x>.ps__rail-x,.ps--active-y>.ps__rail-y{display:block;background-color:transparent}.ps--focus>.ps__rail-x,.ps--focus>.ps__rail-y,.ps--scrolling-x>.ps__rail-x,.ps--scrolling-y>.ps__rail-y,.ps:hover>.ps__rail-x,.ps:hover>.ps__rail-y{opacity:.6}.ps .ps__rail-x.ps--clicking,.ps .ps__rail-x:focus,.ps .ps__rail-x:hover,.ps .ps__rail-y.ps--clicking,.ps .ps__rail-y:focus,.ps .ps__rail-y:hover{background-color:#eee;opacity:.9}.ps__thumb-x{transition:background-color .2s linear,height .2s ease-in-out;-webkit-transition:background-color .2s linear,height .2s ease-in-out;height:6px;bottom:2px}.ps__thumb-x,.ps__thumb-y{background-color:#aaa;border-radius:6px;position:absolute}.ps__thumb-y{transition:background-color .2s linear,width .2s ease-in-out;-webkit-transition:background-color .2s linear,width .2s ease-in-out;width:6px;right:2px}.ps__rail-x.ps--clicking .ps__thumb-x,.ps__rail-x:focus>.ps__thumb-x,.ps__rail-x:hover>.ps__thumb-x{background-color:#999;height:11px}.ps__rail-y.ps--clicking .ps__thumb-y,.ps__rail-y:focus>.ps__thumb-y,.ps__rail-y:hover>.ps__thumb-y{background-color:#999;width:11px}@supports (-ms-overflow-style:none){.ps{overflow:auto!important}}@media (-ms-high-contrast:none),screen and (-ms-high-contrast:active){.ps{overflow:auto!important}}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "fb15":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/_@vue_cli-service@3.9.2@@vue/cli-service/lib/commands/build/setPublicPath.js
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 // This file is imported into lib/wc client bundles.
 
 if (typeof window !== 'undefined') {
+  var currentScript = window.document.currentScript
   if (true) {
-    __webpack_require__("e67d")
+    var getCurrentScript = __webpack_require__("8875")
+    currentScript = getCurrentScript()
+
+    // for backward compatibility, because previously we directly included the polyfill
+    if (!('currentScript' in document)) {
+      Object.defineProperty(document, 'currentScript', { get: getCurrentScript })
+    }
   }
 
-  var i
-  if ((i = window.document.currentScript) && (i = i.src.match(/(.+\/)[^/]+\.js(\?.*)?$/))) {
-    __webpack_require__.p = i[1] // eslint-disable-line
+  var src = currentScript && currentScript.src.match(/(.+\/)[^/]+\.js(\?.*)?$/)
+  if (src) {
+    __webpack_require__.p = src[1] // eslint-disable-line
   }
 }
 
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/_cache-loader@2.0.1@cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"9607a18e-vue-loader-template"}!./node_modules/_vue-loader@15.7.0@vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/_cache-loader@2.0.1@cache-loader/dist/cjs.js??ref--0-0!./node_modules/_vue-loader@15.7.0@vue-loader/lib??vue-loader-options!./src/vue-scrollbar.vue?vue&type=template&id=64ffe147&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2ad4521c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/vue-scrollbar.vue?vue&type=template&id=64ffe147&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.$props.tagname,{tag:"section",staticClass:"ps-container",on:{"ps-scroll-y":_vm.scrollHandle,"ps-scroll-x":_vm.scrollHandle,"ps-scroll-up":_vm.scrollHandle,"ps-scroll-down":_vm.scrollHandle,"ps-scroll-left":_vm.scrollHandle,"ps-scroll-right":_vm.scrollHandle,"ps-y-reach-start":_vm.scrollHandle,"ps-y-reach-end":_vm.scrollHandle,"ps-x-reach-start":_vm.scrollHandle,"ps-x-reach-end":_vm.scrollHandle}},[_vm._t("default")],2)}
 var staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/vue-scrollbar.vue?vue&type=template&id=64ffe147&
 
-// CONCATENATED MODULE: ./node_modules/_perfect-scrollbar@1.4.0@perfect-scrollbar/dist/perfect-scrollbar.esm.js
+// CONCATENATED MODULE: ./node_modules/perfect-scrollbar/dist/perfect-scrollbar.esm.js
 /*!
- * perfect-scrollbar v1.4.0
- * (c) 2018 Hyunje Jun
- * @license MIT
+ * perfect-scrollbar v1.5.0
+ * Copyright 2020 Hyunje Jun, MDBootstrap and Contributors
+ * Licensed under MIT
  */
+
 function get(element) {
   return getComputedStyle(element);
 }
@@ -563,6 +686,7 @@ function queryChildren(element, selector) {
 
 var cls = {
   main: 'ps',
+  rtl: 'ps__rtl',
   element: {
     thumb: function (x) { return ("ps__thumb-" + x); },
     rail: function (x) { return ("ps__rail-" + x); },
@@ -632,10 +756,8 @@ EventElement.prototype.unbind = function unbind (eventName, target) {
 };
 
 EventElement.prototype.unbindAll = function unbindAll () {
-    var this$1 = this;
-
-  for (var name in this$1.handlers) {
-    this$1.unbind(name);
+  for (var name in this.handlers) {
+    this.unbind(name);
   }
 };
 
@@ -700,7 +822,7 @@ function createEvent(name) {
   }
 }
 
-var processScrollDiff = function(
+function processScrollDiff(
   i,
   axis,
   diff,
@@ -732,7 +854,7 @@ var processScrollDiff = function(
   }
 
   processScrollDiff$1(i, diff, fields, useScrollingClass, forceFireReachEvent);
-};
+}
 
 function processScrollDiff$1(
   i,
@@ -815,6 +937,8 @@ var env = {
   supportsTouch:
     typeof window !== 'undefined' &&
     ('ontouchstart' in window ||
+      ('maxTouchPoints' in window.navigator &&
+        window.navigator.maxTouchPoints > 0) ||
       (window.DocumentTouch && document instanceof window.DocumentTouch)),
   supportsIePointer:
     typeof navigator !== 'undefined' && navigator.msMaxTouchPoints,
@@ -823,12 +947,13 @@ var env = {
     /Chrome/i.test(navigator && navigator.userAgent),
 };
 
-var updateGeometry = function(i) {
+function updateGeometry(i) {
   var element = i.element;
   var roundedScrollTop = Math.floor(element.scrollTop);
+  var rect = element.getBoundingClientRect();
 
-  i.containerWidth = element.clientWidth;
-  i.containerHeight = element.clientHeight;
+  i.containerWidth = Math.ceil(rect.width);
+  i.containerHeight = Math.ceil(rect.height);
   i.contentWidth = element.scrollWidth;
   i.contentHeight = element.scrollHeight;
 
@@ -854,11 +979,11 @@ var updateGeometry = function(i) {
     i.railXRatio = i.containerWidth / i.railXWidth;
     i.scrollbarXWidth = getThumbSize(
       i,
-      toInt(i.railXWidth * i.containerWidth / i.contentWidth)
+      toInt((i.railXWidth * i.containerWidth) / i.contentWidth)
     );
     i.scrollbarXLeft = toInt(
-      (i.negativeScrollAdjustment + element.scrollLeft) *
-        (i.railXWidth - i.scrollbarXWidth) /
+      ((i.negativeScrollAdjustment + element.scrollLeft) *
+        (i.railXWidth - i.scrollbarXWidth)) /
         (i.contentWidth - i.containerWidth)
     );
   } else {
@@ -874,11 +999,10 @@ var updateGeometry = function(i) {
     i.railYRatio = i.containerHeight / i.railYHeight;
     i.scrollbarYHeight = getThumbSize(
       i,
-      toInt(i.railYHeight * i.containerHeight / i.contentHeight)
+      toInt((i.railYHeight * i.containerHeight) / i.contentHeight)
     );
     i.scrollbarYTop = toInt(
-      roundedScrollTop *
-        (i.railYHeight - i.scrollbarYHeight) /
+      (roundedScrollTop * (i.railYHeight - i.scrollbarYHeight)) /
         (i.contentHeight - i.containerHeight)
     );
   } else {
@@ -900,7 +1024,7 @@ var updateGeometry = function(i) {
     element.classList.remove(cls.state.active('x'));
     i.scrollbarXWidth = 0;
     i.scrollbarXLeft = 0;
-    element.scrollLeft = 0;
+    element.scrollLeft = i.isRtl === true ? i.contentWidth : 0;
   }
   if (i.scrollbarYActive) {
     element.classList.add(cls.state.active('y'));
@@ -910,7 +1034,7 @@ var updateGeometry = function(i) {
     i.scrollbarYTop = 0;
     element.scrollTop = 0;
   }
-};
+}
 
 function getThumbSize(i, thumbSize) {
   if (i.settings.minScrollbarLength) {
@@ -949,7 +1073,8 @@ function updateCss(element, i) {
         i.contentWidth -
         (i.negativeScrollAdjustment + element.scrollLeft) -
         i.scrollbarYRight -
-        i.scrollbarYOuterWidth;
+        i.scrollbarYOuterWidth -
+        9;
     } else {
       yRailOffset.right = i.scrollbarYRight - element.scrollLeft;
     }
@@ -978,7 +1103,9 @@ function updateCss(element, i) {
   });
 }
 
-var clickRail = function(i) {
+function clickRail(i) {
+  var element = i.element;
+
   i.event.bind(i.scrollbarY, 'mousedown', function (e) { return e.stopPropagation(); });
   i.event.bind(i.scrollbarYRail, 'mousedown', function (e) {
     var positionTop =
@@ -1006,9 +1133,9 @@ var clickRail = function(i) {
 
     e.stopPropagation();
   });
-};
+}
 
-var dragThumb = function(i) {
+function dragThumb(i) {
   bindMouseScrollHandler(i, [
     'containerWidth',
     'contentWidth',
@@ -1029,7 +1156,7 @@ var dragThumb = function(i) {
     'scrollTop',
     'y',
     'scrollbarYRail' ]);
-};
+}
 
 function bindMouseScrollHandler(
   i,
@@ -1052,6 +1179,9 @@ function bindMouseScrollHandler(
   var scrollBy = null;
 
   function mouseMoveHandler(e) {
+    if (e.touches && e.touches[0]) {
+      e[pageY] = e.touches[0].pageY;
+    }
     element[scrollTop] =
       startingScrollTop + scrollBy * (e[pageY] - startingMousePageY);
     addScrollingClass(i, y);
@@ -1067,24 +1197,37 @@ function bindMouseScrollHandler(
     i.event.unbind(i.ownerDocument, 'mousemove', mouseMoveHandler);
   }
 
-  i.event.bind(i[scrollbarY], 'mousedown', function (e) {
+  function bindMoves(e, touchMode) {
     startingScrollTop = element[scrollTop];
+    if (touchMode && e.touches) {
+      e[pageY] = e.touches[0].pageY;
+    }
     startingMousePageY = e[pageY];
     scrollBy =
       (i[contentHeight] - i[containerHeight]) /
       (i[railYHeight] - i[scrollbarYHeight]);
-
-    i.event.bind(i.ownerDocument, 'mousemove', mouseMoveHandler);
-    i.event.once(i.ownerDocument, 'mouseup', mouseUpHandler);
+    if (!touchMode) {
+      i.event.bind(i.ownerDocument, 'mousemove', mouseMoveHandler);
+      i.event.once(i.ownerDocument, 'mouseup', mouseUpHandler);
+      e.preventDefault();
+    } else {
+      i.event.bind(i.ownerDocument, 'touchmove', mouseMoveHandler);
+    }
 
     i[scrollbarYRail].classList.add(cls.state.clicking);
 
     e.stopPropagation();
-    e.preventDefault();
+  }
+
+  i.event.bind(i[scrollbarY], 'mousedown', function (e) {
+    bindMoves(e);
+  });
+  i.event.bind(i[scrollbarY], 'touchstart', function (e) {
+    bindMoves(e, true);
   });
 }
 
-var keyboard = function(i) {
+function keyboard(i) {
   var element = i.element;
 
   var elementHovered = function () { return matches(element, ':hover'); };
@@ -1226,9 +1369,9 @@ var keyboard = function(i) {
       e.preventDefault();
     }
   });
-};
+}
 
-var wheel = function(i) {
+function wheel(i) {
   var element = i.element;
 
   function shouldPreventDefault(deltaX, deltaY) {
@@ -1258,7 +1401,7 @@ var wheel = function(i) {
 
     if (typeof deltaX === 'undefined' || typeof deltaY === 'undefined') {
       // OS X Safari
-      deltaX = -1 * e.wheelDeltaX / 6;
+      deltaX = (-1 * e.wheelDeltaX) / 6;
       deltaY = e.wheelDeltaY / 6;
     }
 
@@ -1299,26 +1442,26 @@ var wheel = function(i) {
       }
 
       var style = get(cursor);
-      var overflow = [style.overflow, style.overflowX, style.overflowY].join(
-        ''
-      );
 
-      // if scrollable
-      if (overflow.match(/(scroll|auto)/)) {
+      // if deltaY && vertical scrollable
+      if (deltaY && style.overflowY.match(/(scroll|auto)/)) {
         var maxScrollTop = cursor.scrollHeight - cursor.clientHeight;
         if (maxScrollTop > 0) {
           if (
-            !(cursor.scrollTop === 0 && deltaY > 0) &&
-            !(cursor.scrollTop === maxScrollTop && deltaY < 0)
+            (cursor.scrollTop > 0 && deltaY < 0) ||
+            (cursor.scrollTop < maxScrollTop && deltaY > 0)
           ) {
             return true;
           }
         }
+      }
+      // if deltaX && horizontal scrollable
+      if (deltaX && style.overflowX.match(/(scroll|auto)/)) {
         var maxScrollLeft = cursor.scrollWidth - cursor.clientWidth;
         if (maxScrollLeft > 0) {
           if (
-            !(cursor.scrollLeft === 0 && deltaX < 0) &&
-            !(cursor.scrollLeft === maxScrollLeft && deltaX > 0)
+            (cursor.scrollLeft > 0 && deltaX < 0) ||
+            (cursor.scrollLeft < maxScrollLeft && deltaX > 0)
           ) {
             return true;
           }
@@ -1380,9 +1523,9 @@ var wheel = function(i) {
   } else if (typeof window.onmousewheel !== 'undefined') {
     i.event.bind(element, 'mousewheel', mousewheelHandler);
   }
-};
+}
 
-var touch = function(i) {
+function touch(i) {
   if (!env.supportsTouch && !env.supportsIePointer) {
     return;
   }
@@ -1487,26 +1630,26 @@ var touch = function(i) {
       }
 
       var style = get(cursor);
-      var overflow = [style.overflow, style.overflowX, style.overflowY].join(
-        ''
-      );
 
-      // if scrollable
-      if (overflow.match(/(scroll|auto)/)) {
+      // if deltaY && vertical scrollable
+      if (deltaY && style.overflowY.match(/(scroll|auto)/)) {
         var maxScrollTop = cursor.scrollHeight - cursor.clientHeight;
         if (maxScrollTop > 0) {
           if (
-            !(cursor.scrollTop === 0 && deltaY > 0) &&
-            !(cursor.scrollTop === maxScrollTop && deltaY < 0)
+            (cursor.scrollTop > 0 && deltaY < 0) ||
+            (cursor.scrollTop < maxScrollTop && deltaY > 0)
           ) {
             return true;
           }
         }
-        var maxScrollLeft = cursor.scrollLeft - cursor.clientWidth;
+      }
+      // if deltaX && horizontal scrollable
+      if (deltaX && style.overflowX.match(/(scroll|auto)/)) {
+        var maxScrollLeft = cursor.scrollWidth - cursor.clientWidth;
         if (maxScrollLeft > 0) {
           if (
-            !(cursor.scrollLeft === 0 && deltaX < 0) &&
-            !(cursor.scrollLeft === maxScrollLeft && deltaX > 0)
+            (cursor.scrollLeft > 0 && deltaX < 0) ||
+            (cursor.scrollLeft < maxScrollLeft && deltaX > 0)
           ) {
             return true;
           }
@@ -1591,7 +1734,7 @@ var touch = function(i) {
       i.event.bind(element, 'MSPointerUp', touchEnd);
     }
   }
-};
+}
 
 var defaultSettings = function () { return ({
   handlers: ['click-rail', 'drag-thumb', 'keyboard', 'wheel', 'touch'],
@@ -1634,7 +1777,7 @@ var PerfectScrollbar = function PerfectScrollbar(element, userSettings) {
 
   this.settings = defaultSettings();
   for (var key in userSettings) {
-    this$1.settings[key] = userSettings[key];
+    this.settings[key] = userSettings[key];
   }
 
   this.containerWidth = null;
@@ -1646,6 +1789,9 @@ var PerfectScrollbar = function PerfectScrollbar(element, userSettings) {
   var blur = function () { return element.classList.remove(cls.state.focus); };
 
   this.isRtl = get(element).direction === 'rtl';
+  if (this.isRtl === true) {
+    element.classList.add(cls.rtl);
+  }
   this.isNegativeScroll = (function () {
     var originalScrollLeft = element.scrollLeft;
     var result = null;
@@ -1721,14 +1867,14 @@ var PerfectScrollbar = function PerfectScrollbar(element, userSettings) {
       element.scrollLeft <= 0
         ? 'start'
         : element.scrollLeft >= this.contentWidth - this.containerWidth
-          ? 'end'
-          : null,
+        ? 'end'
+        : null,
     y:
       element.scrollTop <= 0
         ? 'start'
         : element.scrollTop >= this.contentHeight - this.containerHeight
-          ? 'end'
-          : null,
+        ? 'end'
+        : null,
   };
 
   this.isAlive = true;
@@ -1821,8 +1967,9 @@ PerfectScrollbar.prototype.removePsClasses = function removePsClasses () {
 };
 
 /* harmony default export */ var perfect_scrollbar_esm = (PerfectScrollbar);
+//# sourceMappingURL=perfect-scrollbar.esm.js.map
 
-// CONCATENATED MODULE: ./node_modules/_cache-loader@2.0.1@cache-loader/dist/cjs.js??ref--12-0!./node_modules/_thread-loader@2.1.2@thread-loader/dist/cjs.js!./node_modules/_babel-loader@8.0.6@babel-loader/lib!./node_modules/_cache-loader@2.0.1@cache-loader/dist/cjs.js??ref--0-0!./node_modules/_vue-loader@15.7.0@vue-loader/lib??vue-loader-options!./src/vue-scrollbar.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/vue-scrollbar.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -1928,7 +2075,7 @@ PerfectScrollbar.prototype.removePsClasses = function removePsClasses () {
 // EXTERNAL MODULE: ./src/vue-scrollbar.vue?vue&type=style&index=0&lang=css&
 var vue_scrollbarvue_type_style_index_0_lang_css_ = __webpack_require__("3ae1");
 
-// CONCATENATED MODULE: ./node_modules/_vue-loader@15.7.0@vue-loader/lib/runtime/componentNormalizer.js
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
 
 // IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
@@ -2002,7 +2149,7 @@ function normalizeComponent (
       // for template-only hot-reload because in that case the render fn doesn't
       // go through the normalizer
       options._injectStyles = hook
-      // register for functioal component in vue file
+      // register for functional component in vue file
       var originalRender = options.render
       options.render = function renderWithStyleInjection (h, context) {
         hook.call(context)
@@ -2044,70 +2191,12 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var vue_scrollbar = (component.exports);
-// CONCATENATED MODULE: ./node_modules/_@vue_cli-service@3.9.2@@vue/cli-service/lib/commands/build/entry-lib.js
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
 
 /* harmony default export */ var entry_lib = __webpack_exports__["default"] = (vue_scrollbar);
 
 
-
-/***/ }),
-
-/***/ "e67d":
-/***/ (function(module, exports) {
-
-// document.currentScript polyfill by Adam Miller
-
-// MIT license
-
-(function(document){
-  var currentScript = "currentScript",
-      scripts = document.getElementsByTagName('script'); // Live NodeList collection
-
-  // If browser needs currentScript polyfill, add get currentScript() to the document object
-  if (!(currentScript in document)) {
-    Object.defineProperty(document, currentScript, {
-      get: function(){
-
-        // IE 6-10 supports script readyState
-        // IE 10+ support stack trace
-        try { throw new Error(); }
-        catch (err) {
-
-          // Find the second match for the "at" string to get file src url from stack.
-          // Specifically works with the format of stack traces in IE.
-          var i, res = ((/.*at [^\(]*\((.*):.+:.+\)$/ig).exec(err.stack) || [false])[1];
-
-          // For all scripts on the page, if src matches or if ready state is interactive, return the script tag
-          for(i in scripts){
-            if(scripts[i].src == res || scripts[i].readyState == "interactive"){
-              return scripts[i];
-            }
-          }
-
-          // If no match, return null
-          return null;
-        }
-      }
-    });
-  }
-})(document);
-
-
-/***/ }),
-
-/***/ "f5fc":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("9d3c");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("85cb").default
-var update = add("4cb9b1f6", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ })
 
