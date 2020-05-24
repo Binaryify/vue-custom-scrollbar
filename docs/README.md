@@ -117,7 +117,7 @@ export default {
 
 如果此选项为 true，则当滚动到达边的末尾时，mousewheel 事件将传播到父元素。
 
-**Default**: `false`
+**Default**: `true`
 
 ### `swipeEasing {Boolean}`
 
