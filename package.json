@@ -16,6 +16,6 @@
     "@vue/cli-plugin-babel": "4.5.4",
     "@vue/cli-service": "4.5.4",
     "vue-template-compiler": "2.6.12",
-    "vuepress": "1.4.1"
+    "vuepress": "1.5.4"
   }
 }
