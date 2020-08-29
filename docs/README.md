@@ -66,7 +66,9 @@ export default {
   data() {
     return {
       settings: {
-        maxScrollbarLength: 60
+        suppressScrollY: false,
+        suppressScrollX: false,
+        wheelPropagation: false
       }
     }
   },

@@ -26,6 +26,48 @@ As you know, Chrome support custom scrollbar, but Firefox or other browsers don'
 
 [Docs](https://binaryify.github.io/vue-custom-scrollbar/)
 
+## 例子/Example
+
+```vue
+<template>
+ <div>
+ <vue-custom-scrollbar class="scroll-area"  :settings="settings" @ps-scroll-y="scrollHanle">
+    <img src="http://utatti.github.io/perfect-scrollbar/azusa.jpg" height="720" width="1280" alt="">
+  </vue-custom-scrollbar>
+ </div>
+</template>
+<script>
+import vueCustomScrollbar from 'vue-custom-scrollbar'
+export default {
+  components: {
+    vueCustomScrollbar
+  },
+  data() {
+    return {
+      settings: {
+        suppressScrollY: false,
+        suppressScrollX: false,
+        wheelPropagation: false
+      }
+    }
+  },
+  methods: {
+    scrollHanle(evt) {
+      console.log(evt)
+    }
+  }
+}
+</script>
+<style >
+.scroll-area {
+  position: relative;
+  margin: auto;
+  width: 600px;
+  height: 400px;
+}
+</style>
+```
+
 ## License
 
 [MIT](https://github.com/Binaryify/vue-custom-scrollbar/blob/master/LICENSE)
