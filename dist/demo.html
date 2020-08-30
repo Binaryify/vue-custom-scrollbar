@@ -1,17 +1,30 @@
-<meta charset="utf-8">
-<title>vueScrollbar demo</title>
-<script src="https://unpkg.com/vue"></script>
-<script src="./vueScrollbar.umd.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>demo</title>
+</head>
+
+<body>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vue-custom-scrollbar@1.3.0/dist/vueScrollbar.umd.min.js"></script>
 
 
-<div id="app">
-  <demo></demo>
-</div>
+  <div id="app">
+    <demo style="height:500px;width:500px">
+      <div style="height:1000px;width:1000px;background:green"></div>
+    </demo>
+  </div>
 
-<script>
-new Vue({
-  components: {
-    demo: vueScrollbar
-  }
-}).$mount('#app')
-</script>
+  <script>
+    new Vue({
+      components: {
+        demo: vueScrollbar
+      }
+    }).$mount('#app')
+  </script>
+</body>
+
+</html>
