@@ -11,11 +11,11 @@ module.exports = {
     locales: {
       '/': {
         label: '中文',
-        selectText: '选择语言'
+        selectText: '选择语言/Languages'
       },
       '/en/': {
         label: 'English',
-        selectText: 'Languages'
+        selectText: '选择语言/Languages'
       }
     }
   },
