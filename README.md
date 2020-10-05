@@ -31,13 +31,14 @@ As you know, Chrome support custom scrollbar, but Firefox or other browsers don'
 ```vue
 <template>
  <div>
- <vue-custom-scrollbar class="scroll-area"  :settings="settings" @ps-scroll-y="scrollHanle">
+  <vue-custom-scrollbar class="scroll-area"  :settings="settings" @ps-scroll-y="scrollHanle">
     <img src="http://utatti.github.io/perfect-scrollbar/azusa.jpg" height="720" width="1280" alt="">
   </vue-custom-scrollbar>
- </div>
+</div>
 </template>
 <script>
 import vueCustomScrollbar from 'vue-custom-scrollbar'
+import "vue-custom-scrollbar/dist/vueScrollbar.css"
 export default {
   components: {
     vueCustomScrollbar
