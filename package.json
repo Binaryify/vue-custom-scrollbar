@@ -13,8 +13,8 @@
   },
   "main": "dist/vueScrollbar.umd.min.js",
   "devDependencies": {
-    "@vue/cli-plugin-babel": "4.5.7",
-    "@vue/cli-service": "4.5.7",
+    "@vue/cli-plugin-babel": "4.5.11",
+    "@vue/cli-service": "4.5.11",
     "vue-template-compiler": "2.6.12",
     "vuepress": "1.7.1"
   }
