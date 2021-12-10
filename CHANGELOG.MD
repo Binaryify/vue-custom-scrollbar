@@ -1,4 +1,4 @@
-## 1.4.1 | 2021.12.10
+## 1.4.3 | 2021.12.10
 - Update perfect-scrollbar [#68](https://github.com/Binaryify/vue-custom-scrollbar/issues/68)
 
 ## 1.4.0 | 2020.10.05
