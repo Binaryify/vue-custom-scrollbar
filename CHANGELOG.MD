@@ -1,3 +1,6 @@
+## 1.4.4 | 2022.04.15
+- Add Vite support
+
 ## 1.4.3 | 2021.12.10
 - Update perfect-scrollbar [#68](https://github.com/Binaryify/vue-custom-scrollbar/issues/68)
 

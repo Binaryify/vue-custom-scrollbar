@@ -37,8 +37,16 @@ As you know, Chrome support custom scrollbar, but Firefox or other browsers don'
 </div>
 </template>
 <script>
+/**
+ * For Vue2/Vue3
+*/
 import vueCustomScrollbar from 'vue-custom-scrollbar'
 import "vue-custom-scrollbar/dist/vueScrollbar.css"
+/**
+ * For vite
+*/
+import vueCustomScrollbar from 'vue-custom-scrollbar/src/vue-scrollbar.vue'
+
 export default {
   components: {
     vueCustomScrollbar

@@ -1,6 +1,6 @@
 {
   "name": "vue-custom-scrollbar",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vueScrollbar src/vue-scrollbar.vue",

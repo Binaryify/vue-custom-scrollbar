@@ -51,15 +51,33 @@ $ yarn add vue-custom-scrollbar
 
 ```vue
 <template>
- <div>
- <vue-custom-scrollbar class="scroll-area"  :settings="settings" @ps-scroll-y="scrollHanle">
-    <img src="https://raw.githubusercontent.com/Binaryify/vue-custom-scrollbar/master/docs/azusa.jpg" height="720" width="1280" alt="">
-  </vue-custom-scrollbar>
- </div>
+  <div>
+    <vue-custom-scrollbar
+      class="scroll-area"
+      :settings="settings"
+      @ps-scroll-y="scrollHanle"
+    >
+      <img
+        src="https://raw.githubusercontent.com/Binaryify/vue-custom-scrollbar/master/docs/azusa.jpg"
+        height="720"
+        width="1280"
+        alt=""
+      />
+    </vue-custom-scrollbar>
+  </div>
 </template>
 <script>
+/**
+ * For Vue2/Vue3
+*/
 import vueCustomScrollbar from 'vue-custom-scrollbar'
 import "vue-custom-scrollbar/dist/vueScrollbar.css"
+/**
+ * For vite
+*/
+import vueCustomScrollbar from 'vue-custom-scrollbar/src/vue-scrollbar.vue'
+
+
 export default {
   components: {
     vueCustomScrollbar
@@ -80,7 +98,7 @@ export default {
   }
 }
 </script>
-<style >
+<style>
 .scroll-area {
   position: relative;
   margin: auto;

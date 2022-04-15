@@ -4,12 +4,12 @@
   </section>
 </template>
 <style lang="css">
-@import '~perfect-scrollbar/css/perfect-scrollbar.css';
 .ps-container {
   position: relative;
 }
 </style>
 <script>
+import 'perfect-scrollbar/css/perfect-scrollbar.css'
 import PerfectScrollbar from 'perfect-scrollbar'
 
 export default {
