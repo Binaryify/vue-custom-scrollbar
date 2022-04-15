@@ -1,19 +1,40 @@
 <meta charset="utf-8">
 <title>vueScrollbar demo</title>
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@2"></script>
 <script src="./vueScrollbar.umd.js"></script>
 
 <link rel="stylesheet" href="./vueScrollbar.css">
 
 
 <div id="app">
-  <demo></demo>
+  <vue-scrollbar class="scroll-area" :settings="settings">
+    <img src="https://raw.githubusercontent.com/Binaryify/vue-custom-scrollbar/master/docs/azusa.jpg" height="720"
+      width="1280" alt="">
+  </vue-scrollbar>
 </div>
 
 <script>
-new Vue({
-  components: {
-    demo: vueScrollbar
-  }
-}).$mount('#app')
+  new Vue({
+    components: {
+      vueScrollbar: vueScrollbar
+    },
+    data() {
+      return {
+        settings: {
+          suppressScrollY: false,
+          suppressScrollX: false,
+          wheelPropagation: false
+        }
+      }
+    },
+  }).$mount('#app')
 </script>
+
+<style>
+  .scroll-area {
+    position: relative;
+    margin: auto;
+    width: 600px;
+    height: 400px;
+  }
+</style>
