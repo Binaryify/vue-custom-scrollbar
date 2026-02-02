@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "perfect-scrollbar": "^1.5.3",
-    "vue": "^2.6.11"
+    "vue": "^3.0.0"
   },
   "main": "dist/vueScrollbar.umd.min.js",
   "devDependencies": {
