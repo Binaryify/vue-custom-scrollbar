@@ -1,3 +1,22 @@
+## 2.0.0 | 2026.02.04
+
+### Breaking Changes
+- Vue 3 only, Vue 2 is no longer supported
+- CSS import path changed to `vue-custom-scrollbar/dist/style.css`
+- Lifecycle hook `beforeDestroy` replaced with `onBeforeUnmount`
+
+### Features
+- Rewritten with Vue 3 Composition API (`<script setup>`)
+- Migrated build tool from Vue CLI to Vite
+- Migrated docs from VuePress to VitePress
+- Support both ESM and UMD module formats
+- Exposed `update` method via `defineExpose`
+
+### Improvements
+- Smaller bundle size
+- Faster build speed
+- Better tree-shaking support
+
 ## 1.4.4 | 2022.04.15
 - Add Vite support
 

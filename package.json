@@ -1,21 +1,36 @@
 {
   "name": "vue-custom-scrollbar",
-  "version": "1.4.4",
+  "version": "2.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vue-custom-scrollbar.umd.cjs",
+  "module": "./dist/vue-custom-scrollbar.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-custom-scrollbar.js",
+      "require": "./dist/vue-custom-scrollbar.umd.cjs"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vueScrollbar src/vue-scrollbar.vue",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
   },
   "dependencies": {
-    "perfect-scrollbar": "^1.5.3",
-    "vue": "^2.6.11"
+    "perfect-scrollbar": "^1.5.5"
   },
-  "main": "dist/vueScrollbar.umd.min.js",
   "devDependencies": {
-    "@vue/cli-plugin-babel": "4.5.6",
-    "@vue/cli-service": "4.5.6",
-    "vue-template-compiler": "^2.6.12",
-    "vuepress": "1.6.0"
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.1.4",
+    "vitepress": "^1.0.0",
+    "vue": "^3.4.21"
   }
 }
