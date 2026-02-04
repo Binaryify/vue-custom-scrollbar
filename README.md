@@ -24,7 +24,6 @@ yarn add vue-custom-scrollbar
 <script setup>
 import { reactive } from 'vue'
 import VueCustomScrollbar from 'vue-custom-scrollbar'
-import 'vue-custom-scrollbar/dist/style.css'
 
 const settings = reactive({
   suppressScrollY: false,

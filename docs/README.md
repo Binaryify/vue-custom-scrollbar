@@ -51,53 +51,30 @@ $ yarn add vue-custom-scrollbar
 
 ```vue
 <template>
-  <div>
-    <vue-custom-scrollbar
-      class="scroll-area"
-      :settings="settings"
-      @ps-scroll-y="scrollHanle"
-    >
-      <img
-        src="https://raw.githubusercontent.com/Binaryify/vue-custom-scrollbar/master/docs/azusa.jpg"
-        height="720"
-        width="1280"
-        alt=""
-      />
-    </vue-custom-scrollbar>
-  </div>
+  <VueCustomScrollbar
+    class="scroll-area"
+    :settings="settings"
+    @ps-scroll-y="scrollHandle"
+  >
+    <img src="./image.jpg" alt="" />
+  </VueCustomScrollbar>
 </template>
-<script>
-/**
- * For Vue2/Vue3
-*/
-import vueCustomScrollbar from 'vue-custom-scrollbar'
-import "vue-custom-scrollbar/dist/vueScrollbar.css"
-/**
- * For vite
-*/
-import vueCustomScrollbar from 'vue-custom-scrollbar/src/vue-scrollbar.vue'
 
+<script setup>
+import { reactive } from 'vue'
+import VueCustomScrollbar from 'vue-custom-scrollbar'
 
-export default {
-  components: {
-    vueCustomScrollbar
-  },
-  data() {
-    return {
-      settings: {
-        suppressScrollY: false,
-        suppressScrollX: false,
-        wheelPropagation: false
-      }
-    }
-  },
-  methods: {
-    scrollHanle(evt) {
-      console.log(evt)
-    }
-  }
+const settings = reactive({
+  suppressScrollY: false,
+  suppressScrollX: false,
+  wheelPropagation: false
+})
+
+const scrollHandle = (evt) => {
+  console.log(evt)
 }
 </script>
+
 <style>
 .scroll-area {
   position: relative;

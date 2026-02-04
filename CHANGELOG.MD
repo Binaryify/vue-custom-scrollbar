@@ -1,9 +1,8 @@
-## 2.0.0 | 2026.02.04
+## 2.0.1 | 2026.02.04
 
 ### Breaking Changes
 - Vue 3 only, Vue 2 is no longer supported
-- CSS import path changed to `vue-custom-scrollbar/dist/style.css`
-- Lifecycle hook `beforeDestroy` replaced with `onBeforeUnmount`
+- No need to import CSS separately anymore (CSS is bundled in JS)
 
 ### Features
 - Rewritten with Vue 3 Composition API (`<script setup>`)
@@ -11,6 +10,7 @@
 - Migrated docs from VuePress to VitePress
 - Support both ESM and UMD module formats
 - Exposed `update` method via `defineExpose`
+- CSS is now bundled in JS, no need to import separately
 
 ### Improvements
 - Smaller bundle size

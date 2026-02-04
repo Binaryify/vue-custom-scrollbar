@@ -55,36 +55,31 @@ Example code:
 
 ```vue
 <template>
- <div>
- <vue-custom-scrollbar class="scroll-area"  :settings="settings" @ps-scroll-y="scrollHanle">
-    <img src="https://raw.githubusercontent.com/Binaryify/vue-custom-scrollbar/master/docs/azusa.jpg" height="720" width="1280" alt="">
-  </vue-custom-scrollbar>
- </div>
+  <VueCustomScrollbar
+    class="scroll-area"
+    :settings="settings"
+    @ps-scroll-y="scrollHandle"
+  >
+    <img src="./image.jpg" alt="" />
+  </VueCustomScrollbar>
 </template>
-<script>
-import vueCustomScrollbar from 'vue-custom-scrollbar'
-import "vue-custom-scrollbar/dist/vueScrollbar.css"
-export default {
-  components: {
-    vueCustomScrollbar
-  },
-  data() {
-    return {
-      settings: {
-        suppressScrollY: false,
-        suppressScrollX: false,
-        wheelPropagation: false
-      }
-    }
-  },
-  methods: {
-    scrollHanle(evt) {
-      console.log(evt)
-    }
-  }
+
+<script setup>
+import { reactive } from 'vue'
+import VueCustomScrollbar from 'vue-custom-scrollbar'
+
+const settings = reactive({
+  suppressScrollY: false,
+  suppressScrollX: false,
+  wheelPropagation: false
+})
+
+const scrollHandle = (evt) => {
+  console.log(evt)
 }
 </script>
-<style >
+
+<style>
 .scroll-area {
   position: relative;
   margin: auto;

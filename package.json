@@ -1,6 +1,6 @@
 {
   "name": "vue-custom-scrollbar",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "type": "module",
   "files": [
     "dist"
@@ -11,8 +11,7 @@
     ".": {
       "import": "./dist/vue-custom-scrollbar.js",
       "require": "./dist/vue-custom-scrollbar.umd.cjs"
-    },
-    "./dist/style.css": "./dist/style.css"
+    }
   },
   "scripts": {
     "dev": "vite",
@@ -30,6 +29,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
     "vite": "^5.1.4",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
     "vitepress": "^1.0.0",
     "vue": "^3.4.21"
   }
