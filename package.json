@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
-    "vite": "^5.1.4",
+    "vite": "^7.0.0",
     "vitepress": "^1.0.0",
     "vue": "^3.4.21"
   }
