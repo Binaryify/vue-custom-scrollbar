@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import VueCustomScrollbar from './vue-scrollbar.vue'
+import VueCustomScrollbar from '../dist/vue-custom-scrollbar.js'
 </script>
 
 <style>

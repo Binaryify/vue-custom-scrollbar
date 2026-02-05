@@ -14,9 +14,10 @@
     }
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "[ -d dist ] || npm run build && vite",
     "build": "vite build",
     "preview": "vite preview",
+    "prepublishOnly": "npm run build",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs"
   },
