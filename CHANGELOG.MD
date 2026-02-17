@@ -1,3 +1,10 @@
+## 2.0.2 | 2026.02.17
+
+### Fixes
+- Fixed duplicated `ps-*` event emissions caused by repeated event bindings during re-init
+- Optimized `settings` watcher to avoid unnecessary destroy/recreate cycles
+- Kept `ps-container` class after `PerfectScrollbar.destroy()` so base styles remain stable
+
 ## 2.0.1 | 2026.02.04
 
 ### Breaking Changes
